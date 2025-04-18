@@ -227,8 +227,6 @@
       });
     }
 
-    document.querySelectorAll('tbody tr').forEach(row => aplicarEventos(row));
-
     function adicionarLinha() {
       const tbody = document.querySelector('#priceTable tbody');
       const novaLinha = document.createElement('tr');
@@ -246,6 +244,9 @@
       tbody.appendChild(novaLinha);
       aplicarEventos(novaLinha);
     }
+
+    // Adiciona eventos para todas as linhas existentes após o carregamento
+    document.querySelectorAll('#priceTable tbody tr').forEach(row => aplicarEventos(row));
   </script>
 
 </body>
